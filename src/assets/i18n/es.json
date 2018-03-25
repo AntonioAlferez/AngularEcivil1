@@ -1,6 +1,9 @@
 {
     "error.required": "Campo Obligatorio",
-    
+    "error.email": "el email es incorrecto",
+    "error.differentPass": "Ambas contaseñas deben ser iguales",
+    "error.accept": "Por favor, lea y accepte las condiciones del contrato",
+
     "language": "Idioma",
      
     "user.signup": "Crear una cuenta",

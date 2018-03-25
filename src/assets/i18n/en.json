@@ -1,6 +1,9 @@
 {
     "error.required": "Required Field",
-    
+    "error.email": "It is not a valid email",
+    "error.differentPass": "both password must be equal",
+    "error.accept": "Please read and accept the terms and conditions",
+
     "language": "Language",
     
     "user.signup": "Create Account",

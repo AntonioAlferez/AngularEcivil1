@@ -74,28 +74,48 @@
       </div>
       <div class="form-group col-md-6">
         <label for="lastName">{{'user.lastName' | translate}}</label>
-        <input type="text" class="form-control" [(ngModel)]="user.lastName" required name="lastName">
+        <input type="text" class="form-control" [(ngModel)]="user.lastName" required name="lastName" #lastName="ngModel">
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+            {{'error.required' | translate}}
+        </div>
       </div>
     </div> 
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="email">{{'user.email' | translate}}</label>
-        <input type="email" class="form-control" [(ngModel)]="user.email" required name="email">
+        <input type="email" class="form-control" [(ngModel)]="user.email" 
+          required name="email" pattern="[^ @]*@[^ @]*" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+            {{'error.email' | translate}}
+        </div>   
       </div>
       <div class="form-group col-md-4">
         <label for="password" [ngStyle]="{'color': passColor }">{{'user.password' | translate}}</label>
         <input type="password" class="form-control" [ngStyle]="{'color': passColor }" [(ngModel)]="password" 
-          required name="password">
+          required name="password" #pass="ngModel">
+        <div [hidden]="pass.valid || pass.pristine" class="alert alert-danger">
+          {{'error.required' | translate}}
+        </div>  
+        <div [hidden]="passOk" class="alert alert-danger">
+            {{'error.differentPass' | translate}}
+        </div>
       </div>
       <div class="form-group col-md-4">
         <label for="password2">{{'user.password2' | translate}}</label>
-        <input type="password" class="form-control" [(ngModel)]="password2" required name="password2">
+        <input type="password" class="form-control" [(ngModel)]="password2" required name="password2" #pass2="ngModel">
+        <div [hidden]="pass2.valid || pass2.pristine" class="alert alert-danger">
+          {{'error.required' | translate}}
+        </div> 
       </div>
     </div> 
     <div class="form-row">
       <div class="form-group col-md-10">
         <label for="organization">{{'user.organization' | translate}}</label>
-        <input type="text" class="form-control" [(ngModel)]="user.organization" required name="organization">
+        <input type="text" class="form-control" [(ngModel)]="user.organization" 
+          required name="organization" #organization="ngModel">
+        <div [hidden]="organization.valid || organization.pristine" class="alert alert-danger">
+          {{'error.required' | translate}}
+        </div>  
       </div>      
     </div> 
     <div class="form-group">
@@ -104,6 +124,9 @@
         <label class="form-check-label" for="accept">
           {{'signup.terms' | translate}}
         </label>
+        <div [hidden]="!showAccept" class="alert alert-danger">
+            {{'error.accept' | translate}}
+        </div>
       </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid">{{'user.signup' | translate}}</button>    

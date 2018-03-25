@@ -18,37 +18,33 @@ export class CreateAccountFormComponent implements OnInit {
   password: string;
   password2: string;
   accept: boolean;
+  showAccept: boolean;
   //myForm: FormGroup;
 
   constructor(){
-    this.passOk = false;
+    this.passOk = true;
     this.passColor="black";
     this.accept = false;
+    this.showAccept = false;
     this.user = new UserDto();
   }
   ngOnInit() {
 
-    /*this.myForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      organization: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
-      password: new FormControl('', Validators.required),
-      password2: new FormControl('', Validators.required),
-      accept: new FormControl(),
-    });*/
   }
 
   onSignIn(form: NgForm){
     this.checkPass(form.value.password, form.value.password2);
     if(!this.passOk){
       this.passColor = "red";
+    }else if(!this.accept){
+      this.showAccept = true;
     }
   }
   
   checkPass(pass1: string, pass2: string){
-
-    if(pass1 == pass2){
+    if(pass1 != pass2){
+      this.passOk = false;
+    }else{
       this.passOk = true;
     }
   }
