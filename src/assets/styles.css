@@ -1,0 +1,14 @@
+#content{
+    margin-top: 30px;
+    background: white;
+    padding: 0px;
+}
+
+#header{
+    background: white;
+    margin: 0px;
+}
+
+.activo{
+    font-weight: bold;
+}

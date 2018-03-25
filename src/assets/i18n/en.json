@@ -1,0 +1,23 @@
+{
+    "language": "Language",
+    
+    "user.signup": "Create Account",
+    "user.email": "Email",
+    "user.password": "Password",
+    "user.password2": "Please Repeat The Password",
+    "user.firstName": "First Name",
+    "user.lastName": "Last Name",
+    "user.mobile": "Mobile Phone",
+    "user.office": "Office Phone",
+    "user.otherPhone": "Fax",
+    "user.mail": "Mail address",
+    "user.city": "City",
+    "user.country": "Country",
+    "user.postCode": "Post Code",
+
+    "signup.msg1": "Please Fill Up This Form To Create An Account",
+    "signup.organization": "Enter Your Company´s Name",
+    "signup.vat": "Enter The Fiscal Code Number Of Your Company",
+    "signup.terms": "I Accept The Terms And Conditions" 
+    
+}

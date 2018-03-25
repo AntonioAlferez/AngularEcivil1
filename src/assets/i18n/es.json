@@ -1,0 +1,23 @@
+{
+    "language": "Idioma",
+     
+    "user.signup": "Crear una cuenta",
+    "user.email": "Email",
+    "user.password": "Contraseña",
+    "user.password2": "Repita la contraseña",
+    "user.firstName": "Nombre",
+    "user.lastName": "Apellidos",
+    "user.mobile": "Teléfono Móvil",
+    "user.office": "Tléfono de Oficina",
+    "user.otherPhone": "Fax",
+    "user.mail": "Dirección",
+    "user.city": "Ciudad",
+    "user.country": "País",
+    "user.postCode": "Códigp Postal",
+
+    "signup.msg1": "Rellene el formulario para crear una cuenta",
+    "signup.organization": "Nombre de su Empresa",
+    "signup.vat": "Código fiscal de su empresa",
+    "signup.terms": "Acepto las condiciones del contrato"
+ 
+}
