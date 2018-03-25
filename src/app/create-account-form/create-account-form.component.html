@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h3>{{'signup.msg1' | translate}}</h3>      
@@ -27,7 +27,7 @@
           <input type="email" class="form-control" id="email" placeholder="{{'user.email' | translate}}" required
             name="email" formControlName="email">
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group has-success col-md-4">
           <label for="password">{{'user.password' | translate}}</label>
           <input type="password" class="form-control" id="password" placeholder="{{'user.password' | translate}}" 
             required name="password" formControlName="password">
@@ -47,8 +47,8 @@
       </div>      
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="accept">
-          <label class="form-check-label" for="accept" formControlName="accept">
+          <input class="form-check-input" type="checkbox" id="accept" name="accept" formControlName="accept">
+          <label class="form-check-label" for="accept">
             {{'signup.terms' | translate}}
           </label>
         </div>
@@ -56,5 +56,57 @@
       <button type="submit" class="btn btn-primary">{{'user.signup' | translate}}</button>
     </form> 
     {{myForm.value | json}}
+</div>-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h3>{{'signup.msg1' | translate}}</h3>      
+    </div>
+  </div>
+  <form #f="ngForm" (ngSubmit)="onSignIn(f)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="firstName">{{'user.firstName' | translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="user.firstName" required name="firstName" #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+            {{'error.required' | translate}}
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="lastName">{{'user.lastName' | translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="user.lastName" required name="lastName">
+      </div>
+    </div> 
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="email">{{'user.email' | translate}}</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" required name="email">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="password" [ngStyle]="{'color': passColor }">{{'user.password' | translate}}</label>
+        <input type="password" class="form-control" [ngStyle]="{'color': passColor }" [(ngModel)]="password" 
+          required name="password">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="password2">{{'user.password2' | translate}}</label>
+        <input type="password" class="form-control" [(ngModel)]="password2" required name="password2">
+      </div>
+    </div> 
+    <div class="form-row">
+      <div class="form-group col-md-10">
+        <label for="organization">{{'user.organization' | translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="user.organization" required name="organization">
+      </div>      
+    </div> 
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="accept" name="accept" [(ngModel)]="accept">
+        <label class="form-check-label" for="accept">
+          {{'signup.terms' | translate}}
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">{{'user.signup' | translate}}</button>    
+  </form>
 </div>  
 

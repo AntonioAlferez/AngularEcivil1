@@ -1,4 +1,6 @@
 {
+    "error.required": "Required Field",
+    
     "language": "Language",
     
     "user.signup": "Create Account",
@@ -14,6 +16,7 @@
     "user.city": "City",
     "user.country": "Country",
     "user.postCode": "Post Code",
+    "user.organization": "Company",
 
     "signup.msg1": "Please Fill Up This Form To Create An Account",
     "signup.organization": "Enter Your Company´s Name",

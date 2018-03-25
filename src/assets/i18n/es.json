@@ -1,4 +1,6 @@
 {
+    "error.required": "Campo Obligatorio",
+    
     "language": "Idioma",
      
     "user.signup": "Crear una cuenta",
@@ -8,12 +10,13 @@
     "user.firstName": "Nombre",
     "user.lastName": "Apellidos",
     "user.mobile": "Teléfono Móvil",
-    "user.office": "Tléfono de Oficina",
+    "user.office": "Teléfono de Oficina",
     "user.otherPhone": "Fax",
     "user.mail": "Dirección",
     "user.city": "Ciudad",
     "user.country": "País",
     "user.postCode": "Códigp Postal",
+    "user.organization": "Empresa",
 
     "signup.msg1": "Rellene el formulario para crear una cuenta",
     "signup.organization": "Nombre de su Empresa",
